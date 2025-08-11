@@ -55,8 +55,8 @@ const _Home = () => {
         target: 800,
         progress: 31,
       },
-      { title: "Pay Off Credit Cards", current: 5300, target: 0, progress: 0 },
-      { title: "Emergency Fund", current: 300, target: 5000, progress: 6 },
+      { title: "Pay Off Credit Cards", current: 5322.63, target: 0, progress: 0 },
+      { title: "Emergency Fund", current: 300.00, target: 5000.00, progress: 6 },
     ],
   };
 
