@@ -50,6 +50,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       badge: '$23.3K'
     },
     {
+      name: 'Mortgage Ready',
+      href: '/mortgage-readiness',
+      icon: Home,
+      current: location.pathname === '/mortgage-readiness',
+      badge: '42%'
+    },
+    {
       name: 'Budget Planner',
       href: '/budget',
       icon: PiggyBank,
