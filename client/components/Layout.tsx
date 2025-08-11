@@ -7,8 +7,6 @@ import {
   LayoutDashboard,
   CreditCard,
   TrendingUp,
-  Target,
-  Receipt,
   Settings,
   PiggyBank,
   AlertTriangle,
