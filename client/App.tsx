@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "@/components/Layout";
-import Index from "@/pages/Index";
+import _Home from "@/pages/_Home";
 import CreditCards from "@/pages/CreditCards";
 import IncomeExpenses from "@/pages/IncomeExpenses";
 import DebtPayoff from "@/pages/DebtPayoff";
