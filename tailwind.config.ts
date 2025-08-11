@@ -57,6 +57,18 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        financial: {
+          success: "hsl(var(--financial-success))",
+          "success-foreground": "hsl(var(--financial-success-foreground))",
+          warning: "hsl(var(--financial-warning))",
+          "warning-foreground": "hsl(var(--financial-warning-foreground))",
+          danger: "hsl(var(--financial-danger))",
+          "danger-foreground": "hsl(var(--financial-danger-foreground))",
+          income: "hsl(var(--financial-income))",
+          "income-foreground": "hsl(var(--financial-income-foreground))",
+          expense: "hsl(var(--financial-expense))",
+          "expense-foreground": "hsl(var(--financial-expense-foreground))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
