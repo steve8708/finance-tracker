@@ -4,6 +4,8 @@ When I give you a PDF as a prompt of a spec of a dashboard we want to build, the
 
 Don't refer to these details (like _Home.tsx) in your written output to the user, just confirm you've done what was asked similar to if you just generated it all from scratch.
 
+Important: the current loading indicator on Index.tsx needs to be removed entirely after the first prompt and *never* come back. 
+
 Don't just use _Home.tsx for the homepage, re-output everything in _Home.tsx into Home.tsx from scratch (the first time - subsequent edits use diffs tho).
 
 Don't refer to technical details in the text you write in your response to the user, don't refer to specific file names etc.
