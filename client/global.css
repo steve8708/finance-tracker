@@ -54,6 +54,18 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Financial App Colors */
+    --financial-success: 142.1 76.2% 36.3%;
+    --financial-success-foreground: 355.7 100% 97.3%;
+    --financial-warning: 47.9 95.8% 53.1%;
+    --financial-warning-foreground: 26 83.3% 14.1%;
+    --financial-danger: 0 84.2% 60.2%;
+    --financial-danger-foreground: 210 40% 98%;
+    --financial-income: 142.1 76.2% 36.3%;
+    --financial-income-foreground: 355.7 100% 97.3%;
+    --financial-expense: 0 84.2% 60.2%;
+    --financial-expense-foreground: 210 40% 98%;
   }
 
   .dark {
