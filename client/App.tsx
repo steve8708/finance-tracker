@@ -5,6 +5,7 @@ import Index from '@/pages/Index';
 import CreditCards from '@/pages/CreditCards';
 import IncomeExpenses from '@/pages/IncomeExpenses';
 import DebtPayoff from '@/pages/DebtPayoff';
+import MortgageReadiness from '@/pages/MortgageReadiness';
 import NotFound from '@/pages/NotFound';
 
 const Budget = () => (
