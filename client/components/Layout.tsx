@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { cn } from '@/lib/utils';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 import {
   LayoutDashboard,
   CreditCard,
@@ -13,8 +13,8 @@ import {
   PiggyBank,
   AlertTriangle,
   User,
-  Home
-} from 'lucide-react';
+  Home,
+} from "lucide-react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -25,43 +25,43 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   const navigation = [
     {
-      name: 'Dashboard',
-      href: '/',
+      name: "Dashboard",
+      href: "/",
       icon: LayoutDashboard,
-      current: location.pathname === '/'
+      current: location.pathname === "/",
     },
     {
-      name: 'Credit Cards',
-      href: '/credit-cards',
+      name: "Credit Cards",
+      href: "/credit-cards",
       icon: CreditCard,
-      current: location.pathname === '/credit-cards',
-      badge: '3 cards'
+      current: location.pathname === "/credit-cards",
+      badge: "3 cards",
     },
     {
-      name: 'Income & Expenses',
-      href: '/income-expenses',
+      name: "Income & Expenses",
+      href: "/income-expenses",
       icon: TrendingUp,
-      current: location.pathname === '/income-expenses'
+      current: location.pathname === "/income-expenses",
     },
     {
-      name: 'Debt Payoff',
-      href: '/debt-payoff',
+      name: "Debt Payoff",
+      href: "/debt-payoff",
       icon: Target,
-      current: location.pathname === '/debt-payoff',
-      badge: '$23.3K'
+      current: location.pathname === "/debt-payoff",
+      badge: "$23.3K",
     },
     {
-      name: 'Budget Planner',
-      href: '/budget',
+      name: "Budget Planner",
+      href: "/budget",
       icon: PiggyBank,
-      current: location.pathname === '/budget'
+      current: location.pathname === "/budget",
     },
     {
-      name: 'Transactions',
-      href: '/transactions',
+      name: "Transactions",
+      href: "/transactions",
       icon: Receipt,
-      current: location.pathname === '/transactions'
-    }
+      current: location.pathname === "/transactions",
+    },
   ];
 
   return (
@@ -94,7 +94,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             {/* User Profile */}
             <div className="flex items-center space-x-3">
               <div className="text-right">
-                <p className="text-sm font-medium text-slate-900 dark:text-white">Amina Jones</p>
+                <p className="text-sm font-medium text-slate-900 dark:text-white">
+                  Amina Jones
+                </p>
                 <p className="text-xs text-slate-500">Freelance Designer</p>
               </div>
               <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
@@ -117,9 +119,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   to={item.href}
                   className={cn(
                     item.current
-                      ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800'
-                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 border-transparent',
-                    'group flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg border transition-colors'
+                      ? "bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800"
+                      : "text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 border-transparent",
+                    "group flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg border transition-colors",
                   )}
                 >
                   <div className="flex items-center space-x-3">
@@ -148,15 +150,19 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   <span className="text-lg font-bold">625</span>
                 </div>
                 <div className="w-full bg-slate-200 dark:bg-slate-600 rounded-full h-2">
-                  <div 
-                    className="bg-financial-warning h-2 rounded-full" 
-                    style={{ width: '59%' }}
+                  <div
+                    className="bg-financial-warning h-2 rounded-full"
+                    style={{ width: "59%" }}
                   ></div>
                 </div>
                 <p className="text-xs text-slate-500 mt-1">Goal: 800</p>
               </div>
 
-              <Button variant="ghost" size="sm" className="w-full justify-start">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="w-full justify-start"
+              >
                 <Settings className="w-4 h-4 mr-2" />
                 Settings
               </Button>
@@ -165,9 +171,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1">
-          {children}
-        </main>
+        <main className="flex-1">{children}</main>
       </div>
     </div>
   );
