@@ -47,18 +47,44 @@ const Transactions = () => (
 function App() {
   return (
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/credit-cards" element={<CreditCards />} />
-          <Route path="/income-expenses" element={<IncomeExpenses />} />
-          <Route path="/debt-payoff" element={<DebtPayoff />} />
-          <Route path="/mortgage-readiness" element={<MortgageReadiness />} />
-          <Route path="/budget" element={<Budget />} />
-          <Route path="/transactions" element={<Transactions />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Layout>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/credit-cards" element={
+          <Layout>
+            <CreditCards />
+          </Layout>
+        } />
+        <Route path="/income-expenses" element={
+          <Layout>
+            <IncomeExpenses />
+          </Layout>
+        } />
+        <Route path="/debt-payoff" element={
+          <Layout>
+            <DebtPayoff />
+          </Layout>
+        } />
+        <Route path="/mortgage-readiness" element={
+          <Layout>
+            <MortgageReadiness />
+          </Layout>
+        } />
+        <Route path="/budget" element={
+          <Layout>
+            <Budget />
+          </Layout>
+        } />
+        <Route path="/transactions" element={
+          <Layout>
+            <Transactions />
+          </Layout>
+        } />
+        <Route path="*" element={
+          <Layout>
+            <NotFound />
+          </Layout>
+        } />
+      </Routes>
     </BrowserRouter>
   );
 }
