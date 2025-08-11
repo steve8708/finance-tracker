@@ -7,39 +7,41 @@ import FinancialGoalsCard from "@/components/FinancialGoalsCard";
 import AccountBalancesCard from "@/components/AccountBalancesCard";
 
 const _Home = () => {
-  // Amina's actual financial data
+  // Amina's actual financial data from PDF
   const financialData = {
     totalIncome: 95000,
-    monthlyIncome: 7917,
-    creditScore: 625, // Middle of 610-640 range
+    monthlyIncome: 7916.67,
+    creditScore: 625,
     creditScoreGoal: 800,
-    totalDebt: 23300, // 5300 CC + 18000 student loans
-    creditCardDebt: 5300,
+    totalDebt: 23322.63,
+    creditCardDebt: 5322.63,
     studentLoans: 18000,
-    checkingBalance: 125,
-    savingsBalance: 300,
-    monthlyExpenses: 3700, // Approximate from fixed costs
+    checkingBalance: 125.00,
+    savingsBalance: 300.00,
+    monthlyExpenses: 3625.00,
+    housingUtilities: 2673.00,
+    debtPayments: 355.00,
     creditCards: [
       {
         name: "Chase Freedom Flex",
-        balance: 2226,
+        balance: 2226.24,
         limit: 3000,
         apr: 24.99,
-        payment: 85,
+        payment: 85.00,
       },
       {
         name: "Discover it Cash Back",
-        balance: 1475,
+        balance: 1475.89,
         limit: 2000,
         apr: 27.49,
-        payment: 60,
+        payment: 60.00,
       },
       {
         name: "Capital One Quicksilver",
-        balance: 1622,
+        balance: 1620.50,
         limit: 2500,
         apr: 19.99,
-        payment: 70,
+        payment: 70.00,
       },
     ],
     upcomingIncome: [
