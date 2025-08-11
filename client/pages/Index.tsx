@@ -4,11 +4,11 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Separator } from '@/components/ui/separator';
-import { 
-  CreditCard, 
-  DollarSign, 
-  TrendingUp, 
-  TrendingDown, 
+import {
+  CreditCard,
+  DollarSign,
+  TrendingUp,
+  TrendingDown,
   Target,
   AlertTriangle,
   CheckCircle,
@@ -16,7 +16,8 @@ import {
   PiggyBank,
   Receipt,
   ArrowUpRight,
-  ArrowDownRight
+  ArrowDownRight,
+  Home
 } from 'lucide-react';
 
 const Index = () => {
