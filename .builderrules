@@ -1,0 +1,1 @@
+When I give you a PDF as a prompt of a spec of a dashboard we want to build, the baseline dashboard is already in _Home.tsx. so bring that back as the homepage and the Layout.tsx back to it too

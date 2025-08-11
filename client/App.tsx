@@ -1,12 +1,12 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from '@/components/Layout';
-import Index from '@/pages/Index';
-import CreditCards from '@/pages/CreditCards';
-import IncomeExpenses from '@/pages/IncomeExpenses';
-import DebtPayoff from '@/pages/DebtPayoff';
-import MortgageReadiness from '@/pages/MortgageReadiness';
-import NotFound from '@/pages/NotFound';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "@/components/Layout";
+import Index from "@/pages/Index";
+import CreditCards from "@/pages/CreditCards";
+import IncomeExpenses from "@/pages/IncomeExpenses";
+import DebtPayoff from "@/pages/DebtPayoff";
+import MortgageReadiness from "@/pages/MortgageReadiness";
+import NotFound from "@/pages/NotFound";
 
 const Budget = () => (
   <div className="p-8">
@@ -16,10 +16,12 @@ const Budget = () => (
           Budget Planner
         </h1>
         <p className="text-slate-600 dark:text-slate-400 mb-6">
-          This page will show budget creation, category allocation, and spending tracking vs budget.
+          This page will show budget creation, category allocation, and spending
+          tracking vs budget.
         </p>
         <p className="text-sm text-slate-500">
-          Continue prompting to have this page built out with full functionality.
+          Continue prompting to have this page built out with full
+          functionality.
         </p>
       </div>
     </div>
@@ -34,10 +36,12 @@ const Transactions = () => (
           Transaction History
         </h1>
         <p className="text-slate-600 dark:text-slate-400 mb-6">
-          This page will show detailed transaction history, categorization, and search/filter functionality.
+          This page will show detailed transaction history, categorization, and
+          search/filter functionality.
         </p>
         <p className="text-sm text-slate-500">
-          Continue prompting to have this page built out with full functionality.
+          Continue prompting to have this page built out with full
+          functionality.
         </p>
       </div>
     </div>
@@ -47,18 +51,65 @@ const Transactions = () => (
 function App() {
   return (
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/credit-cards" element={<CreditCards />} />
-          <Route path="/income-expenses" element={<IncomeExpenses />} />
-          <Route path="/debt-payoff" element={<DebtPayoff />} />
-          <Route path="/mortgage-readiness" element={<MortgageReadiness />} />
-          <Route path="/budget" element={<Budget />} />
-          <Route path="/transactions" element={<Transactions />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Layout>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route
+          path="/credit-cards"
+          element={
+            <Layout>
+              <CreditCards />
+            </Layout>
+          }
+        />
+        <Route
+          path="/income-expenses"
+          element={
+            <Layout>
+              <IncomeExpenses />
+            </Layout>
+          }
+        />
+        <Route
+          path="/debt-payoff"
+          element={
+            <Layout>
+              <DebtPayoff />
+            </Layout>
+          }
+        />
+        <Route
+          path="/mortgage-readiness"
+          element={
+            <Layout>
+              <MortgageReadiness />
+            </Layout>
+          }
+        />
+        <Route
+          path="/budget"
+          element={
+            <Layout>
+              <Budget />
+            </Layout>
+          }
+        />
+        <Route
+          path="/transactions"
+          element={
+            <Layout>
+              <Transactions />
+            </Layout>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <Layout>
+              <NotFound />
+            </Layout>
+          }
+        />
+      </Routes>
     </BrowserRouter>
   );
 }
