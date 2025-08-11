@@ -52,11 +52,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={
-          <Layout>
-            <_Home />
-          </Layout>
-        } />
+        <Route path="/" element={<Index />} />
         <Route
           path="/credit-cards"
           element={
