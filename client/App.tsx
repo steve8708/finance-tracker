@@ -26,7 +26,6 @@ const Budget = () => (
   </div>
 );
 
-
 function App() {
   return (
     <BrowserRouter>
