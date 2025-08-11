@@ -1,9 +1,15 @@
-import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
-import { Separator } from '@/components/ui/separator';
+import React from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
+import { Separator } from "@/components/ui/separator";
 import {
   CreditCard,
   DollarSign,
@@ -17,8 +23,8 @@ import {
   Receipt,
   ArrowUpRight,
   ArrowDownRight,
-  Home
-} from 'lucide-react';
+  Home,
+} from "lucide-react";
 
 const _Home = () => {
   // Amina's actual financial data
@@ -34,22 +40,46 @@ const _Home = () => {
     savingsBalance: 300,
     monthlyExpenses: 3700, // Approximate from fixed costs
     creditCards: [
-      { name: 'Chase Freedom Flex', balance: 2226, limit: 3000, apr: 24.99, payment: 85 },
-      { name: 'Discover it Cash Back', balance: 1475, limit: 2000, apr: 27.49, payment: 60 },
-      { name: 'Capital One Quicksilver', balance: 1622, limit: 2500, apr: 19.99, payment: 70 }
+      {
+        name: "Chase Freedom Flex",
+        balance: 2226,
+        limit: 3000,
+        apr: 24.99,
+        payment: 85,
+      },
+      {
+        name: "Discover it Cash Back",
+        balance: 1475,
+        limit: 2000,
+        apr: 27.49,
+        payment: 60,
+      },
+      {
+        name: "Capital One Quicksilver",
+        balance: 1622,
+        limit: 2500,
+        apr: 19.99,
+        payment: 70,
+      },
     ],
     upcomingIncome: [
-      { source: 'Coffee Shop Branding', amount: 3200, date: 'Sep 2025' },
-      { source: 'Arts Org Event Staff', amount: 1500, date: 'Sep 2025' }
+      { source: "Coffee Shop Branding", amount: 3200, date: "Sep 2025" },
+      { source: "Arts Org Event Staff", amount: 1500, date: "Sep 2025" },
     ],
     goals: [
-      { title: 'Reach 800 Credit Score', current: 625, target: 800, progress: 31 },
-      { title: 'Pay Off Credit Cards', current: 5300, target: 0, progress: 0 },
-      { title: 'Emergency Fund', current: 300, target: 5000, progress: 6 }
-    ]
+      {
+        title: "Reach 800 Credit Score",
+        current: 625,
+        target: 800,
+        progress: 31,
+      },
+      { title: "Pay Off Credit Cards", current: 5300, target: 0, progress: 0 },
+      { title: "Emergency Fund", current: 300, target: 5000, progress: 6 },
+    ],
   };
 
-  const creditScoreProgress = ((financialData.creditScore - 300) / (850 - 300)) * 100;
+  const creditScoreProgress =
+    ((financialData.creditScore - 300) / (850 - 300)) * 100;
   const creditUtilization = (financialData.creditCardDebt / 7500) * 100; // Total credit limit
 
   return (
@@ -71,7 +101,10 @@ const _Home = () => {
                 <AlertTriangle className="w-3 h-3 mr-1" />
                 71% Credit Utilization - URGENT
               </Badge>
-              <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+              <Badge
+                variant="outline"
+                className="bg-blue-50 text-blue-700 border-blue-200"
+              >
                 🏠 Mortgage Ready: 42%
               </Badge>
             </div>
@@ -91,7 +124,12 @@ const _Home = () => {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold text-financial-danger">
-                -${(financialData.totalDebt - financialData.checkingBalance - financialData.savingsBalance).toLocaleString()}
+                -$
+                {(
+                  financialData.totalDebt -
+                  financialData.checkingBalance -
+                  financialData.savingsBalance
+                ).toLocaleString()}
               </div>
               <p className="text-xs text-slate-500 mt-1">
                 <ArrowDownRight className="w-3 h-3 inline mr-1" />
@@ -114,7 +152,8 @@ const _Home = () => {
               <div className="mt-2">
                 <Progress value={creditScoreProgress} className="h-2" />
                 <p className="text-xs text-slate-500 mt-1">
-                  Goal: {financialData.creditScoreGoal} (+{financialData.creditScoreGoal - financialData.creditScore})
+                  Goal: {financialData.creditScoreGoal} (+
+                  {financialData.creditScoreGoal - financialData.creditScore})
                 </p>
               </div>
             </CardContent>
@@ -129,7 +168,10 @@ const _Home = () => {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">
-                ${(financialData.checkingBalance + financialData.savingsBalance).toLocaleString()}
+                $
+                {(
+                  financialData.checkingBalance + financialData.savingsBalance
+                ).toLocaleString()}
               </div>
               <p className="text-xs text-financial-danger mt-1">
                 <AlertTriangle className="w-3 h-3 inline mr-1" />
@@ -147,11 +189,15 @@ const _Home = () => {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold text-financial-income">
-                +${(financialData.monthlyIncome - financialData.monthlyExpenses).toLocaleString()}
+                +$
+                {(
+                  financialData.monthlyIncome - financialData.monthlyExpenses
+                ).toLocaleString()}
               </div>
               <p className="text-xs text-slate-500 mt-1">
-                <ArrowUpRight className="w-3 h-3 inline mr-1" />
-                ${financialData.monthlyIncome.toLocaleString()} in - ${financialData.monthlyExpenses.toLocaleString()} out
+                <ArrowUpRight className="w-3 h-3 inline mr-1" />$
+                {financialData.monthlyIncome.toLocaleString()} in - $
+                {financialData.monthlyExpenses.toLocaleString()} out
               </p>
             </CardContent>
           </Card>
@@ -159,10 +205,8 @@ const _Home = () => {
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          
           {/* Left Column - Credit Cards & Debt */}
           <div className="lg:col-span-2 space-y-6">
-            
             {/* Credit Cards */}
             <Card>
               <CardHeader>
@@ -173,32 +217,55 @@ const _Home = () => {
                       Credit Cards
                     </CardTitle>
                     <CardDescription>
-                      Total Balance: ${financialData.creditCardDebt.toLocaleString()} • Utilization: {Math.round(creditUtilization)}%
+                      Total Balance: $
+                      {financialData.creditCardDebt.toLocaleString()} •
+                      Utilization: {Math.round(creditUtilization)}%
                     </CardDescription>
                   </div>
-                  <Badge variant={creditUtilization > 30 ? "destructive" : "secondary"}>
-                    {creditUtilization > 30 ? "High Utilization" : "Good Utilization"}
+                  <Badge
+                    variant={
+                      creditUtilization > 30 ? "destructive" : "secondary"
+                    }
+                  >
+                    {creditUtilization > 30
+                      ? "High Utilization"
+                      : "Good Utilization"}
                   </Badge>
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
                 {financialData.creditCards.map((card, index) => (
-                  <div key={index} className="p-4 border rounded-lg bg-slate-50 dark:bg-slate-800">
+                  <div
+                    key={index}
+                    className="p-4 border rounded-lg bg-slate-50 dark:bg-slate-800"
+                  >
                     <div className="flex justify-between items-start mb-3">
                       <div>
                         <h4 className="font-medium">{card.name}</h4>
-                        <p className="text-sm text-slate-500">APR: {card.apr}%</p>
+                        <p className="text-sm text-slate-500">
+                          APR: {card.apr}%
+                        </p>
                       </div>
                       <div className="text-right">
-                        <p className="font-bold">${card.balance.toLocaleString()}</p>
-                        <p className="text-sm text-slate-500">/ ${card.limit.toLocaleString()}</p>
+                        <p className="font-bold">
+                          ${card.balance.toLocaleString()}
+                        </p>
+                        <p className="text-sm text-slate-500">
+                          / ${card.limit.toLocaleString()}
+                        </p>
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <Progress value={(card.balance / card.limit) * 100} className="h-2" />
+                      <Progress
+                        value={(card.balance / card.limit) * 100}
+                        className="h-2"
+                      />
                       <div className="flex justify-between text-xs text-slate-500">
                         <span>Min Payment: ${card.payment}</span>
-                        <span>{Math.round((card.balance / card.limit) * 100)}% utilized</span>
+                        <span>
+                          {Math.round((card.balance / card.limit) * 100)}%
+                          utilized
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -220,7 +287,10 @@ const _Home = () => {
               <CardContent>
                 <div className="space-y-3">
                   {financialData.upcomingIncome.map((income, index) => (
-                    <div key={index} className="flex justify-between items-center p-3 bg-financial-income/5 border border-financial-income/20 rounded-lg">
+                    <div
+                      key={index}
+                      className="flex justify-between items-center p-3 bg-financial-income/5 border border-financial-income/20 rounded-lg"
+                    >
                       <div>
                         <p className="font-medium">{income.source}</p>
                         <p className="text-sm text-slate-500">{income.date}</p>
@@ -234,7 +304,10 @@ const _Home = () => {
                   <div className="flex justify-between items-center font-bold">
                     <span>Total Expected</span>
                     <span className="text-financial-income">
-                      +${financialData.upcomingIncome.reduce((sum, income) => sum + income.amount, 0).toLocaleString()}
+                      +$
+                      {financialData.upcomingIncome
+                        .reduce((sum, income) => sum + income.amount, 0)
+                        .toLocaleString()}
                     </span>
                   </div>
                 </div>
@@ -244,7 +317,6 @@ const _Home = () => {
 
           {/* Right Column - Goals & Actions */}
           <div className="space-y-6">
-
             {/* Mortgage Readiness Alert */}
             <Card className="border-l-4 border-l-blue-500">
               <CardHeader>
@@ -268,8 +340,12 @@ const _Home = () => {
                     <div className="flex items-start gap-2">
                       <AlertTriangle className="w-4 h-4 text-red-600 mt-0.5" />
                       <div>
-                        <p className="text-sm font-medium text-red-700">URGENT: Credit Utilization</p>
-                        <p className="text-xs text-slate-600">71% → Need under 30% (+100 credit points)</p>
+                        <p className="text-sm font-medium text-red-700">
+                          URGENT: Credit Utilization
+                        </p>
+                        <p className="text-xs text-slate-600">
+                          71% → Need under 30% (+100 credit points)
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -278,8 +354,12 @@ const _Home = () => {
                     <div className="flex items-start gap-2">
                       <PiggyBank className="w-4 h-4 text-yellow-600 mt-0.5" />
                       <div>
-                        <p className="text-sm font-medium text-yellow-700">Down Payment Gap</p>
-                        <p className="text-xs text-slate-600">Need $79,700 more for 20% down</p>
+                        <p className="text-sm font-medium text-yellow-700">
+                          Down Payment Gap
+                        </p>
+                        <p className="text-xs text-slate-600">
+                          Need $79,700 more for 20% down
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -311,12 +391,12 @@ const _Home = () => {
                       <span className="text-slate-500">{goal.progress}%</span>
                     </div>
                     <Progress value={goal.progress} className="h-2" />
-                    {goal.title.includes('Credit Score') && (
+                    {goal.title.includes("Credit Score") && (
                       <p className="text-xs text-slate-500">
                         Current: {goal.current} → Target: {goal.target}
                       </p>
                     )}
-                    {goal.title.includes('Emergency Fund') && (
+                    {goal.title.includes("Emergency Fund") && (
                       <p className="text-xs text-slate-500">
                         ${goal.current} of ${goal.target.toLocaleString()}
                       </p>
@@ -339,8 +419,12 @@ const _Home = () => {
                   <div className="flex items-start gap-2">
                     <AlertTriangle className="w-4 h-4 text-red-600 mt-0.5" />
                     <div>
-                      <p className="text-sm font-medium text-red-700">Pay $3,075 to Credit Cards</p>
-                      <p className="text-xs text-slate-500">Brings utilization to 30% (+80 credit points)</p>
+                      <p className="text-sm font-medium text-red-700">
+                        Pay $3,075 to Credit Cards
+                      </p>
+                      <p className="text-xs text-slate-500">
+                        Brings utilization to 30% (+80 credit points)
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -349,8 +433,12 @@ const _Home = () => {
                   <div className="flex items-start gap-2">
                     <PiggyBank className="w-4 h-4 text-yellow-600 mt-0.5" />
                     <div>
-                      <p className="text-sm font-medium text-yellow-700">Emergency Fund First</p>
-                      <p className="text-xs text-slate-500">$5K minimum before house shopping</p>
+                      <p className="text-sm font-medium text-yellow-700">
+                        Emergency Fund First
+                      </p>
+                      <p className="text-xs text-slate-500">
+                        $5K minimum before house shopping
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -359,8 +447,12 @@ const _Home = () => {
                   <div className="flex items-start gap-2">
                     <Calendar className="w-4 h-4 text-blue-600 mt-0.5" />
                     <div>
-                      <p className="text-sm font-medium text-blue-700">Perfect Payment History</p>
-                      <p className="text-xs text-slate-500">Zero late payments for next 24 months</p>
+                      <p className="text-sm font-medium text-blue-700">
+                        Perfect Payment History
+                      </p>
+                      <p className="text-xs text-slate-500">
+                        Zero late payments for next 24 months
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -369,8 +461,12 @@ const _Home = () => {
                   <div className="flex items-start gap-2">
                     <TrendingUp className="w-4 h-4 text-green-600 mt-0.5" />
                     <div>
-                      <p className="text-sm font-medium text-green-700">Income Documentation</p>
-                      <p className="text-xs text-slate-500">Maintain 2 years of freelance records</p>
+                      <p className="text-sm font-medium text-green-700">
+                        Income Documentation
+                      </p>
+                      <p className="text-xs text-slate-500">
+                        Maintain 2 years of freelance records
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -393,18 +489,26 @@ const _Home = () => {
               <CardContent className="space-y-3">
                 <div className="flex justify-between items-center">
                   <span className="text-sm">Chase Checking</span>
-                  <span className="font-medium">${financialData.checkingBalance}</span>
+                  <span className="font-medium">
+                    ${financialData.checkingBalance}
+                  </span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-sm">Chase Savings</span>
-                  <span className="font-medium">${financialData.savingsBalance}</span>
+                  <span className="font-medium">
+                    ${financialData.savingsBalance}
+                  </span>
                 </div>
                 <Separator />
                 <div className="flex justify-between items-center font-medium">
                   <span>Total Liquid Assets</span>
-                  <span>${financialData.checkingBalance + financialData.savingsBalance}</span>
+                  <span>
+                    $
+                    {financialData.checkingBalance +
+                      financialData.savingsBalance}
+                  </span>
                 </div>
-                
+
                 <div className="mt-4 p-3 bg-financial-danger/10 border border-financial-danger/20 rounded-lg">
                   <div className="flex items-center gap-2">
                     <AlertTriangle className="w-4 h-4 text-financial-danger" />
