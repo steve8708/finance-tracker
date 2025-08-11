@@ -40,7 +40,7 @@ const CreditCardsSection: React.FC<CreditCardsSectionProps> = ({
             </CardTitle>
             <CardDescription>
               Total Balance: ${creditCardDebt.toLocaleString()} • Utilization:{" "}
-              {Math.round(creditUtilization)}%
+              {creditUtilization.toFixed(1)}%
             </CardDescription>
           </div>
           <Badge variant={creditUtilization > 30 ? "destructive" : "secondary"}>
@@ -74,7 +74,7 @@ const CreditCardsSection: React.FC<CreditCardsSectionProps> = ({
               <div className="flex justify-between text-xs text-slate-500">
                 <span>Min Payment: ${card.payment}</span>
                 <span>
-                  {Math.round((card.balance / card.limit) * 100)}% utilized
+                  {((card.balance / card.limit) * 100).toFixed(1)}% utilized
                 </span>
               </div>
             </div>

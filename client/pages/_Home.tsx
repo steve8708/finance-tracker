@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import MetricsGrid from "@/components/MetricsGrid";
 import CreditCardsSection from "@/components/CreditCardsSection";
 import UpcomingIncomeSection from "@/components/UpcomingIncomeSection";
-import MortgageReadinessCard from "@/components/MortgageReadinessCard";
 import FinancialGoalsCard from "@/components/FinancialGoalsCard";
 import PriorityActionsCard from "@/components/PriorityActionsCard";
 import AccountBalancesCard from "@/components/AccountBalancesCard";
@@ -63,15 +62,10 @@ const _Home = () => {
   const creditScoreProgress =
     ((financialData.creditScore - 300) / (850 - 300)) * 100;
   const creditUtilization = (financialData.creditCardDebt / 7500) * 100; // Total credit limit
-  const mortgageReadiness = 42;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
-      <Header
-        userName="Amina"
-        creditUtilization={creditUtilization}
-        mortgageReadiness={mortgageReadiness}
-      />
+      <Header userName="Amina" creditUtilization={creditUtilization} />
 
       <div className="max-w-7xl mx-auto px-6 py-8">
         <MetricsGrid
@@ -96,8 +90,6 @@ const _Home = () => {
 
           {/* Right Column - Goals & Actions */}
           <div className="space-y-6">
-            <MortgageReadinessCard mortgageReadiness={mortgageReadiness} />
-
             <FinancialGoalsCard goals={financialData.goals} />
 
             <PriorityActionsCard />
