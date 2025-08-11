@@ -1,1 +1,3 @@
-When I give you a PDF as a prompt of a spec of a dashboard we want to build, the baseline dashboard is already in _Home.tsx. so bring that back as the homepage and the Layout.tsx back to it too
+When I give you a PDF as a prompt of a spec of a dashboard we want to build, the baseline dashboard is already in _Home.tsx. so bring that back as the homepage and the Layout.tsx back to it too (aka make sure we use the <Layout> on the homepage again)
+
+Don't refer to these details (like _Home.tsx) in your written output to the user, just confirm you've done what was asked similar to if you just generated it all from scratch.
