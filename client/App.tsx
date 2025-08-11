@@ -4,7 +4,6 @@ import Layout from "@/components/Layout";
 import Index from "@/pages/Index";
 import CreditCards from "@/pages/CreditCards";
 import IncomeExpenses from "@/pages/IncomeExpenses";
-import DebtPayoff from "@/pages/DebtPayoff";
 import NotFound from "@/pages/NotFound";
 
 const Budget = () => (
@@ -69,26 +68,10 @@ function App() {
           }
         />
         <Route
-          path="/debt-payoff"
-          element={
-            <Layout>
-              <DebtPayoff />
-            </Layout>
-          }
-        />
-        <Route
           path="/budget"
           element={
             <Layout>
               <Budget />
-            </Layout>
-          }
-        />
-        <Route
-          path="/transactions"
-          element={
-            <Layout>
-              <Transactions />
             </Layout>
           }
         />

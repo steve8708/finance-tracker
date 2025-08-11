@@ -44,23 +44,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       current: location.pathname === "/income-expenses",
     },
     {
-      name: "Debt Payoff",
-      href: "/debt-payoff",
-      icon: Target,
-      current: location.pathname === "/debt-payoff",
-      badge: "$23.3K",
-    },
-    {
       name: "Budget Planner",
       href: "/budget",
       icon: PiggyBank,
       current: location.pathname === "/budget",
-    },
-    {
-      name: "Transactions",
-      href: "/transactions",
-      icon: Receipt,
-      current: location.pathname === "/transactions",
     },
   ];
 
