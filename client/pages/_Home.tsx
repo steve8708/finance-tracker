@@ -92,8 +92,6 @@ const _Home = () => {
           <div className="space-y-6">
             <FinancialGoalsCard goals={financialData.goals} />
 
-            <PriorityActionsCard />
-
             <AccountBalancesCard
               checkingBalance={financialData.checkingBalance}
               savingsBalance={financialData.savingsBalance}

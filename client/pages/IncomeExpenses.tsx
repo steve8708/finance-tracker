@@ -387,26 +387,6 @@ const IncomeExpenses = () => {
             </CardContent>
           </Card>
 
-          {/* Action Items */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Action Items</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <Button variant="outline" className="w-full justify-start">
-                <Briefcase className="w-4 h-4 mr-2" />
-                Set Income Goals
-              </Button>
-              <Button variant="outline" className="w-full justify-start">
-                <Receipt className="w-4 h-4 mr-2" />
-                Create Budget Categories
-              </Button>
-              <Button variant="outline" className="w-full justify-start">
-                <Target className="w-4 h-4 mr-2" />
-                Track Spending Habits
-              </Button>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>
