@@ -7,39 +7,41 @@ import FinancialGoalsCard from "@/components/FinancialGoalsCard";
 import AccountBalancesCard from "@/components/AccountBalancesCard";
 
 const _Home = () => {
-  // Amina's actual financial data
+  // Amina's actual financial data from PDF
   const financialData = {
     totalIncome: 95000,
-    monthlyIncome: 7917,
-    creditScore: 625, // Middle of 610-640 range
+    monthlyIncome: 7916.67,
+    creditScore: 625,
     creditScoreGoal: 800,
-    totalDebt: 23300, // 5300 CC + 18000 student loans
-    creditCardDebt: 5300,
+    totalDebt: 23322.63,
+    creditCardDebt: 5322.63,
     studentLoans: 18000,
-    checkingBalance: 125,
-    savingsBalance: 300,
-    monthlyExpenses: 3700, // Approximate from fixed costs
+    checkingBalance: 125.0,
+    savingsBalance: 300.0,
+    monthlyExpenses: 3625.0,
+    housingUtilities: 2673.0,
+    debtPayments: 355.0,
     creditCards: [
       {
         name: "Chase Freedom Flex",
-        balance: 2226,
+        balance: 2226.24,
         limit: 3000,
         apr: 24.99,
-        payment: 85,
+        payment: 85.0,
       },
       {
         name: "Discover it Cash Back",
-        balance: 1475,
+        balance: 1475.89,
         limit: 2000,
         apr: 27.49,
-        payment: 60,
+        payment: 60.0,
       },
       {
         name: "Capital One Quicksilver",
-        balance: 1622,
+        balance: 1620.5,
         limit: 2500,
         apr: 19.99,
-        payment: 70,
+        payment: 70.0,
       },
     ],
     upcomingIncome: [
@@ -53,14 +55,19 @@ const _Home = () => {
         target: 800,
         progress: 31,
       },
-      { title: "Pay Off Credit Cards", current: 5300, target: 0, progress: 0 },
-      { title: "Emergency Fund", current: 300, target: 5000, progress: 6 },
+      {
+        title: "Pay Off Credit Cards",
+        current: 5322.63,
+        target: 0,
+        progress: 0,
+      },
+      { title: "Emergency Fund", current: 300.0, target: 5000.0, progress: 6 },
     ],
   };
 
   const creditScoreProgress =
     ((financialData.creditScore - 300) / (850 - 300)) * 100;
-  const creditUtilization = (financialData.creditCardDebt / 7500) * 100; // Total credit limit
+  const creditUtilization = (5322.63 / 7500) * 100; // $5,322.63 of $7,500 from PDF
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">

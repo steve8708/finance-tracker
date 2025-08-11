@@ -53,3 +53,5 @@ Encourage momentum
 
 
 When we add a mortgage tracker, lets make their readiness score 42%
+
+Avoid adding non-functional elements, like buttons that do nothing on click. Just don't include them if avoidable.
