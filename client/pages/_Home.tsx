@@ -4,7 +4,6 @@ import MetricsGrid from "@/components/MetricsGrid";
 import CreditCardsSection from "@/components/CreditCardsSection";
 import UpcomingIncomeSection from "@/components/UpcomingIncomeSection";
 import FinancialGoalsCard from "@/components/FinancialGoalsCard";
-import PriorityActionsCard from "@/components/PriorityActionsCard";
 import AccountBalancesCard from "@/components/AccountBalancesCard";
 
 const _Home = () => {
@@ -91,8 +90,6 @@ const _Home = () => {
           {/* Right Column - Goals & Actions */}
           <div className="space-y-6">
             <FinancialGoalsCard goals={financialData.goals} />
-
-            <PriorityActionsCard />
 
             <AccountBalancesCard
               checkingBalance={financialData.checkingBalance}

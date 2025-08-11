@@ -4,7 +4,6 @@ import Layout from "@/components/Layout";
 import Index from "@/pages/Index";
 import CreditCards from "@/pages/CreditCards";
 import IncomeExpenses from "@/pages/IncomeExpenses";
-import DebtPayoff from "@/pages/DebtPayoff";
 import NotFound from "@/pages/NotFound";
 
 const Budget = () => (
@@ -17,26 +16,6 @@ const Budget = () => (
         <p className="text-slate-600 dark:text-slate-400 mb-6">
           This page will show budget creation, category allocation, and spending
           tracking vs budget.
-        </p>
-        <p className="text-sm text-slate-500">
-          Continue prompting to have this page built out with full
-          functionality.
-        </p>
-      </div>
-    </div>
-  </div>
-);
-
-const Transactions = () => (
-  <div className="p-8">
-    <div className="max-w-4xl mx-auto">
-      <div className="text-center py-12">
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
-          Transaction History
-        </h1>
-        <p className="text-slate-600 dark:text-slate-400 mb-6">
-          This page will show detailed transaction history, categorization, and
-          search/filter functionality.
         </p>
         <p className="text-sm text-slate-500">
           Continue prompting to have this page built out with full
@@ -69,26 +48,10 @@ function App() {
           }
         />
         <Route
-          path="/debt-payoff"
-          element={
-            <Layout>
-              <DebtPayoff />
-            </Layout>
-          }
-        />
-        <Route
           path="/budget"
           element={
             <Layout>
               <Budget />
-            </Layout>
-          }
-        />
-        <Route
-          path="/transactions"
-          element={
-            <Layout>
-              <Transactions />
             </Layout>
           }
         />

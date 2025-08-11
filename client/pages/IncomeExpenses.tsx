@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
-import { Separator } from '@/components/ui/separator';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  TrendingUp, 
+import React, { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
+import { Separator } from "@/components/ui/separator";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  TrendingUp,
   TrendingDown,
   Calendar,
   PieChart,
@@ -21,11 +27,11 @@ import {
   Home,
   Car,
   Coffee,
-  ShoppingBag
-} from 'lucide-react';
+  ShoppingBag,
+} from "lucide-react";
 
 const IncomeExpenses = () => {
-  const [selectedMonth, setSelectedMonth] = useState('august');
+  const [selectedMonth, setSelectedMonth] = useState("august");
 
   // Amina's actual financial data
   const monthlyData = {
@@ -37,38 +43,109 @@ const IncomeExpenses = () => {
       totalExpenses: 4507,
       cashFlow: -4507,
       incomeBreakdown: [
-        { category: 'Freelance Projects', amount: 0, percentage: 0 },
-        { category: 'Contract Work', amount: 0, percentage: 0 }
+        { category: "Freelance Projects", amount: 0, percentage: 0 },
+        { category: "Contract Work", amount: 0, percentage: 0 },
       ],
       expenseBreakdown: [
-        { category: 'Housing', amount: 2673, percentage: 59, icon: Home },
-        { category: 'Transportation', amount: 410, percentage: 9, icon: Car },
-        { category: 'Subscriptions', amount: 187, percentage: 4, icon: Receipt },
-        { category: 'Debt Payments', amount: 355, percentage: 8, icon: Target },
-        { category: 'Food & Dining', amount: 234, percentage: 5, icon: Coffee },
-        { category: 'Shopping', amount: 223, percentage: 5, icon: ShoppingBag },
-        { category: 'Personal Care', amount: 156, percentage: 3, icon: Receipt },
-        { category: 'Other', amount: 269, percentage: 6, icon: Receipt }
+        { category: "Housing", amount: 2673, percentage: 59, icon: Home },
+        { category: "Transportation", amount: 410, percentage: 9, icon: Car },
+        {
+          category: "Subscriptions",
+          amount: 187,
+          percentage: 4,
+          icon: Receipt,
+        },
+        { category: "Debt Payments", amount: 355, percentage: 8, icon: Target },
+        { category: "Food & Dining", amount: 234, percentage: 5, icon: Coffee },
+        { category: "Shopping", amount: 223, percentage: 5, icon: ShoppingBag },
+        {
+          category: "Personal Care",
+          amount: 156,
+          percentage: 3,
+          icon: Receipt,
+        },
+        { category: "Other", amount: 269, percentage: 6, icon: Receipt },
       ],
       upcomingIncome: [
-        { source: 'Coffee Shop Branding', amount: 3200, date: 'Sep 15', type: 'Freelance' },
-        { source: 'Arts Org Event Staff', amount: 1500, date: 'Sep 30', type: 'Contract' }
+        {
+          source: "Coffee Shop Branding",
+          amount: 3200,
+          date: "Sep 15",
+          type: "Freelance",
+        },
+        {
+          source: "Arts Org Event Staff",
+          amount: 1500,
+          date: "Sep 30",
+          type: "Contract",
+        },
       ],
       recentTransactions: [
-        { date: '08/26', description: 'Spotify', category: 'Subscriptions', amount: -10.99, type: 'expense' },
-        { date: '08/25', description: 'Trader Joe\'s', category: 'Food & Dining', amount: -58.10, type: 'expense' },
-        { date: '08/24', description: 'Ross - Clothing', category: 'Shopping', amount: -34.77, type: 'expense' },
-        { date: '08/23', description: 'Starbucks', category: 'Food & Dining', amount: -6.95, type: 'expense' },
-        { date: '08/22', description: 'Etsy - Logo Asset', category: 'Business', amount: -18.00, type: 'expense' },
-        { date: '08/20', description: 'Parking - Downtown', category: 'Transportation', amount: -3.50, type: 'expense' },
-        { date: '08/19', description: 'Google Workspace', category: 'Subscriptions', amount: -6.00, type: 'expense' },
-        { date: '08/18', description: 'Ross - Wardrobe', category: 'Shopping', amount: -34.77, type: 'expense' }
-      ]
-    }
+        {
+          date: "08/26",
+          description: "Spotify",
+          category: "Subscriptions",
+          amount: -10.99,
+          type: "expense",
+        },
+        {
+          date: "08/25",
+          description: "Trader Joe's",
+          category: "Food & Dining",
+          amount: -58.1,
+          type: "expense",
+        },
+        {
+          date: "08/24",
+          description: "Ross - Clothing",
+          category: "Shopping",
+          amount: -34.77,
+          type: "expense",
+        },
+        {
+          date: "08/23",
+          description: "Starbucks",
+          category: "Food & Dining",
+          amount: -6.95,
+          type: "expense",
+        },
+        {
+          date: "08/22",
+          description: "Etsy - Logo Asset",
+          category: "Business",
+          amount: -18.0,
+          type: "expense",
+        },
+        {
+          date: "08/20",
+          description: "Parking - Downtown",
+          category: "Transportation",
+          amount: -3.5,
+          type: "expense",
+        },
+        {
+          date: "08/19",
+          description: "Google Workspace",
+          category: "Subscriptions",
+          amount: -6.0,
+          type: "expense",
+        },
+        {
+          date: "08/18",
+          description: "Ross - Wardrobe",
+          category: "Shopping",
+          amount: -34.77,
+          type: "expense",
+        },
+      ],
+    },
   };
 
   const data = monthlyData[selectedMonth];
-  const savingsRate = data.totalIncome > 0 ? ((data.totalIncome - data.totalExpenses) / data.totalIncome) * 100 : 0;
+  const savingsRate =
+    data.totalIncome > 0
+      ? ((data.totalIncome - data.totalExpenses) / data.totalIncome) * 100
+      : 0;
 
   return (
     <div className="p-6 space-y-6">
@@ -83,7 +160,7 @@ const IncomeExpenses = () => {
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <select 
+          <select
             value={selectedMonth}
             onChange={(e) => setSelectedMonth(e.target.value)}
             className="px-3 py-2 border rounded-lg bg-white dark:bg-slate-800"
@@ -98,10 +175,13 @@ const IncomeExpenses = () => {
         <div className="flex items-center gap-3">
           <AlertTriangle className="w-5 h-5 text-financial-danger" />
           <div>
-            <h3 className="font-medium text-financial-danger">No Income This Month</h3>
+            <h3 className="font-medium text-financial-danger">
+              No Income This Month
+            </h3>
             <p className="text-sm text-slate-600">
-              August shows $0 income with ${data.totalExpenses.toLocaleString()} in expenses. 
-              September income projections: ${data.projectedIncome.toLocaleString()}
+              August shows $0 income with ${data.totalExpenses.toLocaleString()}{" "}
+              in expenses. September income projections: $
+              {data.projectedIncome.toLocaleString()}
             </p>
           </div>
         </div>
@@ -179,19 +259,15 @@ const IncomeExpenses = () => {
 
       {/* Main Content */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
         {/* Left Column - Expense Breakdown */}
         <div className="lg:col-span-2 space-y-6">
-          
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <PieChart className="w-5 h-5" />
                 Expense Breakdown
               </CardTitle>
-              <CardDescription>
-                How you spent money this month
-              </CardDescription>
+              <CardDescription>How you spent money this month</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
@@ -204,11 +280,17 @@ const IncomeExpenses = () => {
                           <div className="w-8 h-8 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center">
                             <Icon className="w-4 h-4 text-slate-600 dark:text-slate-400" />
                           </div>
-                          <span className="font-medium">{expense.category}</span>
+                          <span className="font-medium">
+                            {expense.category}
+                          </span>
                         </div>
                         <div className="text-right">
-                          <span className="font-bold">${expense.amount.toLocaleString()}</span>
-                          <span className="text-sm text-slate-500 ml-2">{expense.percentage}%</span>
+                          <span className="font-bold">
+                            ${expense.amount.toLocaleString()}
+                          </span>
+                          <span className="text-sm text-slate-500 ml-2">
+                            {expense.percentage}%
+                          </span>
                         </div>
                       </div>
                       <Progress value={expense.percentage} className="h-2" />
@@ -240,25 +322,35 @@ const IncomeExpenses = () => {
             <CardContent>
               <div className="space-y-3">
                 {data.recentTransactions.map((transaction, index) => (
-                  <div key={index} className="flex justify-between items-center p-3 border rounded-lg">
+                  <div
+                    key={index}
+                    className="flex justify-between items-center p-3 border rounded-lg"
+                  >
                     <div className="flex-1">
                       <div className="flex justify-between items-start">
                         <div>
-                          <p className="font-medium text-sm">{transaction.description}</p>
+                          <p className="font-medium text-sm">
+                            {transaction.description}
+                          </p>
                           <div className="flex items-center gap-2 mt-1">
                             <Badge variant="outline" className="text-xs">
                               {transaction.category}
                             </Badge>
-                            <span className="text-xs text-slate-500">{transaction.date}</span>
+                            <span className="text-xs text-slate-500">
+                              {transaction.date}
+                            </span>
                           </div>
                         </div>
                         <div className="text-right">
-                          <span className={`font-bold ${
-                            transaction.type === 'income' 
-                              ? 'text-financial-income' 
-                              : 'text-financial-expense'
-                          }`}>
-                            {transaction.type === 'income' ? '+' : ''}${Math.abs(transaction.amount).toFixed(2)}
+                          <span
+                            className={`font-bold ${
+                              transaction.type === "income"
+                                ? "text-financial-income"
+                                : "text-financial-expense"
+                            }`}
+                          >
+                            {transaction.type === "income" ? "+" : ""}$
+                            {Math.abs(transaction.amount).toFixed(2)}
                           </span>
                         </div>
                       </div>
@@ -272,7 +364,6 @@ const IncomeExpenses = () => {
 
         {/* Right Column */}
         <div className="space-y-6">
-          
           {/* Upcoming Income */}
           <Card>
             <CardHeader>
@@ -280,14 +371,15 @@ const IncomeExpenses = () => {
                 <Calendar className="w-5 h-5" />
                 Upcoming Income
               </CardTitle>
-              <CardDescription>
-                Expected payments for September
-              </CardDescription>
+              <CardDescription>Expected payments for September</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
                 {data.upcomingIncome.map((income, index) => (
-                  <div key={index} className="p-3 bg-financial-income/5 border border-financial-income/20 rounded-lg">
+                  <div
+                    key={index}
+                    className="p-3 bg-financial-income/5 border border-financial-income/20 rounded-lg"
+                  >
                     <div className="flex justify-between items-start mb-2">
                       <div>
                         <p className="font-medium text-sm">{income.source}</p>
@@ -306,7 +398,10 @@ const IncomeExpenses = () => {
                 <div className="flex justify-between items-center font-bold">
                   <span>Total Expected</span>
                   <span className="text-financial-income">
-                    +${data.upcomingIncome.reduce((sum, income) => sum + income.amount, 0).toLocaleString()}
+                    +$
+                    {data.upcomingIncome
+                      .reduce((sum, income) => sum + income.amount, 0)
+                      .toLocaleString()}
                   </span>
                 </div>
               </div>
@@ -328,7 +423,8 @@ const IncomeExpenses = () => {
                   <div>
                     <p className="text-sm font-medium">High Housing Costs</p>
                     <p className="text-xs text-slate-500">
-                      Housing is 59% of expenses (${data.expenseBreakdown[0].amount})
+                      Housing is 59% of expenses ($
+                      {data.expenseBreakdown[0].amount})
                     </p>
                   </div>
                 </div>
@@ -338,9 +434,12 @@ const IncomeExpenses = () => {
                 <div className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-financial-success mt-0.5" />
                   <div>
-                    <p className="text-sm font-medium">Low Subscription Costs</p>
+                    <p className="text-sm font-medium">
+                      Low Subscription Costs
+                    </p>
                     <p className="text-xs text-slate-500">
-                      Only 4% spent on subscriptions (${data.expenseBreakdown[2].amount})
+                      Only 4% spent on subscriptions ($
+                      {data.expenseBreakdown[2].amount})
                     </p>
                   </div>
                 </div>
@@ -351,7 +450,9 @@ const IncomeExpenses = () => {
                   Monthly Budget Target
                 </h4>
                 <p className="text-xs text-blue-800 dark:text-blue-200">
-                  Aim to keep expenses under ${Math.round(data.projectedIncome * 0.8).toLocaleString()} to save 20%
+                  Aim to keep expenses under $
+                  {Math.round(data.projectedIncome * 0.8).toLocaleString()} to
+                  save 20%
                 </p>
               </div>
             </CardContent>
@@ -368,43 +469,27 @@ const IncomeExpenses = () => {
             <CardContent className="space-y-3">
               <div className="flex justify-between text-sm">
                 <span className="text-slate-600">Expected Income</span>
-                <span className="font-bold text-financial-income">+${data.projectedIncome.toLocaleString()}</span>
+                <span className="font-bold text-financial-income">
+                  +${data.projectedIncome.toLocaleString()}
+                </span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-slate-600">Estimated Expenses</span>
-                <span className="font-bold text-financial-expense">-${data.fixedExpenses.toLocaleString()}</span>
+                <span className="font-bold text-financial-expense">
+                  -${data.fixedExpenses.toLocaleString()}
+                </span>
               </div>
               <Separator />
               <div className="flex justify-between font-bold">
                 <span>Projected Cash Flow</span>
                 <span className="text-financial-income">
-                  +${(data.projectedIncome - data.fixedExpenses).toLocaleString()}
+                  +$
+                  {(data.projectedIncome - data.fixedExpenses).toLocaleString()}
                 </span>
               </div>
               <div className="text-xs text-slate-500 text-center">
                 Assuming minimal variable expenses
               </div>
-            </CardContent>
-          </Card>
-
-          {/* Action Items */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Action Items</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <Button variant="outline" className="w-full justify-start">
-                <Briefcase className="w-4 h-4 mr-2" />
-                Set Income Goals
-              </Button>
-              <Button variant="outline" className="w-full justify-start">
-                <Receipt className="w-4 h-4 mr-2" />
-                Create Budget Categories
-              </Button>
-              <Button variant="outline" className="w-full justify-start">
-                <Target className="w-4 h-4 mr-2" />
-                Track Spending Habits
-              </Button>
             </CardContent>
           </Card>
         </div>
