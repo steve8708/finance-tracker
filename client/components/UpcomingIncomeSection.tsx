@@ -24,7 +24,7 @@ const UpcomingIncomeSection: React.FC<UpcomingIncomeSectionProps> = ({
 }) => {
   const totalExpected = upcomingIncome.reduce(
     (sum, income) => sum + income.amount,
-    0
+    0,
   );
 
   return (
@@ -34,9 +34,7 @@ const UpcomingIncomeSection: React.FC<UpcomingIncomeSectionProps> = ({
           <Calendar className="w-5 h-5" />
           Upcoming Income
         </CardTitle>
-        <CardDescription>
-          Projected earnings for the next month
-        </CardDescription>
+        <CardDescription>Projected earnings for the next month</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-3">

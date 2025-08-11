@@ -39,13 +39,11 @@ const CreditCardsSection: React.FC<CreditCardsSectionProps> = ({
               Credit Cards
             </CardTitle>
             <CardDescription>
-              Total Balance: ${creditCardDebt.toLocaleString()} •
-              Utilization: {Math.round(creditUtilization)}%
+              Total Balance: ${creditCardDebt.toLocaleString()} • Utilization:{" "}
+              {Math.round(creditUtilization)}%
             </CardDescription>
           </div>
-          <Badge
-            variant={creditUtilization > 30 ? "destructive" : "secondary"}
-          >
+          <Badge variant={creditUtilization > 30 ? "destructive" : "secondary"}>
             {creditUtilization > 30 ? "High Utilization" : "Good Utilization"}
           </Badge>
         </div>

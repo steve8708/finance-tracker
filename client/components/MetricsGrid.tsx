@@ -1,16 +1,7 @@
 import React from "react";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import {
-  ArrowUpRight,
-  ArrowDownRight,
-  AlertTriangle,
-} from "lucide-react";
+import { ArrowUpRight, ArrowDownRight, AlertTriangle } from "lucide-react";
 
 interface FinancialData {
   totalDebt: number;
@@ -35,10 +26,10 @@ const MetricsGrid: React.FC<MetricsGridProps> = ({
     financialData.totalDebt -
     financialData.checkingBalance -
     financialData.savingsBalance;
-  
+
   const availableCash =
     financialData.checkingBalance + financialData.savingsBalance;
-  
+
   const monthlyCashFlow =
     financialData.monthlyIncome - financialData.monthlyExpenses;
 
@@ -70,9 +61,7 @@ const MetricsGrid: React.FC<MetricsGridProps> = ({
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">
-            {financialData.creditScore}
-          </div>
+          <div className="text-2xl font-bold">{financialData.creditScore}</div>
           <div className="mt-2">
             <Progress value={creditScoreProgress} className="h-2" />
             <p className="text-xs text-slate-500 mt-1">
