@@ -4,7 +4,6 @@ import MetricsGrid from "@/components/MetricsGrid";
 import CreditCardsSection from "@/components/CreditCardsSection";
 import UpcomingIncomeSection from "@/components/UpcomingIncomeSection";
 import FinancialGoalsCard from "@/components/FinancialGoalsCard";
-import PriorityActionsCard from "@/components/PriorityActionsCard";
 import AccountBalancesCard from "@/components/AccountBalancesCard";
 
 const _Home = () => {
