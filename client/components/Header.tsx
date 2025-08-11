@@ -7,10 +7,7 @@ interface HeaderProps {
   creditUtilization: number;
 }
 
-const Header: React.FC<HeaderProps> = ({
-  userName,
-  creditUtilization,
-}) => {
+const Header: React.FC<HeaderProps> = ({ userName, creditUtilization }) => {
   return (
     <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 px-6 py-4">
       <div className="max-w-7xl mx-auto">
