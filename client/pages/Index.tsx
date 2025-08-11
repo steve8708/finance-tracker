@@ -62,13 +62,16 @@ const Index = () => {
                 Welcome back, Amina 👋
               </h1>
               <p className="text-slate-600 dark:text-slate-400">
-                Here's your financial overview for August 2025
+                Your journey to homeownership starts here
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <Badge variant="outline" className="bg-financial-success/10 text-financial-success border-financial-success/20">
-                <CheckCircle className="w-3 h-3 mr-1" />
-                No late payments this month
+              <Badge variant="destructive">
+                <AlertTriangle className="w-3 h-3 mr-1" />
+                71% Credit Utilization - URGENT
+              </Badge>
+              <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                🏠 Mortgage Ready: 42%
               </Badge>
             </div>
           </div>
