@@ -53,6 +53,7 @@ function App() {
           <Route path="/credit-cards" element={<CreditCards />} />
           <Route path="/income-expenses" element={<IncomeExpenses />} />
           <Route path="/debt-payoff" element={<DebtPayoff />} />
+          <Route path="/mortgage-readiness" element={<MortgageReadiness />} />
           <Route path="/budget" element={<Budget />} />
           <Route path="/transactions" element={<Transactions />} />
           <Route path="*" element={<NotFound />} />
