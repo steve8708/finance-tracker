@@ -62,7 +62,7 @@ const _Home = () => {
 
   const creditScoreProgress =
     ((financialData.creditScore - 300) / (850 - 300)) * 100;
-  const creditUtilization = (financialData.creditCardDebt / 7500) * 100; // Total credit limit
+  const creditUtilization = (5322.63 / 7500) * 100; // $5,322.63 of $7,500 from PDF
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
