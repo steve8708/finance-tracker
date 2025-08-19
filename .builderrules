@@ -1,57 +1,36 @@
+First Prompt Behavior (New Project or Branch)
+- Always generate a new, unique dashboard design.
+- Avoid reused layouts, patterns, or component arrangements.
+- Restore _Home.tsx as Home.tsx, and restore Layout.tsx wrapping around the homepage.
+- Re-output the entire content of _Home.tsx into Home.tsx from scratch (not as a reference or import).
+- Do not explain or mention file names, file restoration, or implementation details in your written response.
+- Remove the loading indicator from Index.tsx completely and permanently. It must never reappear in future generations.
+- Use Builder.io-native structures and JSON if needed — no screenshots, no usage of screenshot tools.
+
+Subsequent Prompts (Same Project or Branch)
+- Treat future prompts as incremental edits, refinements, or extensions to the existing dashboard.
+- Use diff-style updates (only modify what’s needed).
+- Do not generate a full new layout unless explicitly instructed to.
+- Maintain usage of the <Layout> component consistently.
+
+User-Facing Responses
+- Do not mention or refer to implementation details like filenames (_Home.tsx, Layout.tsx, etc.).
+- Confirm what’s been implemented as if it was freshly designed, regardless of file reuse.
+- Never reveal internal logic steps taken to fulfill a request.
+- Avoid generating buttons, tabs, or interactivity if they are non-functional placeholders.
+
 Don't take any screenshots of your work - don't use the screenshot tool.
 
 When I give you a PDF as a prompt of a spec of a dashboard we want to build, the baseline dashboard is already in _Home.tsx. so bring that back as the homepage and the Layout.tsx back to it too (aka make sure we use the <Layout> on the homepage again)
 
 Don't refer to these details (like _Home.tsx) in your written output to the user, just confirm you've done what was asked similar to if you just generated it all from scratch.
 
-Important: the current loading indicator on Index.tsx needs to be removed entirely after the first prompt and *never* come back. 
+Important: the current loading indicator on Index.tsx needs to be removed entirely after the first prompt and *never* come back.
 
 Don't just use _Home.tsx for the homepage, re-output everything in _Home.tsx into Home.tsx from scratch (the first time - subsequent edits use diffs tho).
 
 Don't refer to technical details in the text you write in your response to the user, don't refer to specific file names etc.
 
 Also note the _Home.tsx contents already follows the PDF correctly, just use it as-is, don't update things to match the PDF, its already how we want it.
-
-Here's some additional context of what to know/do when the user asks for specific types of things:
-
-For creating a Mortgage Readiness tab:
-Add a "Mortgage Readiness" tab to this existing financial dashboard without changing current tabs.
-In this tab, review Amina’s data and show what she should do to improve her credit score for buying a house in 5 years. 
-Assume a maximum 10% income increase per year when making recommendations.
-
-
-For creating a What-If Sandbox:
-Add a “What If” tab at the bottom of this dashboard. 
-Let me test real-life actions and see predicted impacts on my score. 
-For each scenario: 
-Let me select or type an action (e.g., “Pay $300 on Discover,” “Miss Chase payment”) 
-Require entry of a date and amount, where relevant 
-Show predicted impact (short- and long-term)
-Simulator input and prediction response should appear side by side for easy comparison 
-Display a confidence level for the prediction 
-Make this a sandbox, no real effects, just planning and learning.
-
-For creating Tax Peace:
-Add a new tab called ‘Tax Peace’, to this existing financial dashboard without changing current tabs.
-Again, use the data from previosuly uploaded tax documents to automatically extract and organize key information.
-Focus on features that help: 
-Track income, deductions, and estimated payments 
-Flag missing documents 
-Get monthly reminders for quarterly payments 
-See suggestions for write-offs based on my actual spending 
-
-For creating Wealth Building:
-Add a new tab focused on Wealth Building. 
-Imagine Amina is just starting to invest for the first time. Based on what you know about Amina from her bio, personalize this page to help her build wealth in a way that fits her lifestyle, income, and priorities. 
-Keep it simple and actionable. 
-Include beginner-friendly investment options 
-Lay out a clear path to get started 
-Give suggestions that match where Amina is financially, not generic advice 
-Also, act as Amina’s accountability partner: Remind her of small steps she can take 
-Track her progress 
-Encourage momentum
-
-
-When we add a mortgage tracker, lets make their readiness score 42%
 
 Avoid adding non-functional elements, like buttons that do nothing on click. Just don't include them if avoidable.
